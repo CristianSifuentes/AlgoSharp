@@ -27,6 +27,7 @@ public class Matrix<T>: IMatrixOperations<T> where T : struct{
         }
     }
 
+
     public Matrix<T> Multiply(Matrix<T> other)
     {
         if (Columns != other.Rows)
@@ -45,9 +46,19 @@ public class Matrix<T>: IMatrixOperations<T> where T : struct{
         }
         return new Matrix<T>(result);
     }
-
-    internal object Transpose()
+     
+    /// <summary>
+    /// Swaps rows and columns to produce the transpose. 
+    /// </summary>
+    /// <returns>T[,]</returns>
+    public Matrix<T> Transpose()
     {
-        throw new NotImplementedException();
+        T[,] result = new T[Columns, Rows];
+        for(int i = 0; i < Rows; i++){
+            for(int j = 0; j < Columns; j++){
+                result[j, i] = _data[i, j];
+            }
+        }
+        return new Matrix<T>(result);
     }
 }

@@ -29,6 +29,7 @@ public class Program {
         product.Display();
         Console.WriteLine("\nTranspose of Matrix 1:");
         var transpose = matrix1.Transpose();
+        transpose.Display();
 
     }
 }
