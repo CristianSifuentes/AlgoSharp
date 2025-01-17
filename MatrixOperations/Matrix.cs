@@ -9,8 +9,9 @@ public class Matrix<T>: IMatrixOperations<T> where T : struct{
         Columns = this._data.GetLength(1);
     }
 
-
-  
+    public T this [int row, int col]{
+        get => _data[row, col];
+    }
 
     public double Determinant()
     {
@@ -26,13 +27,22 @@ public class Matrix<T>: IMatrixOperations<T> where T : struct{
         }
     }
 
-    public void Multiply(Matrix<T> other)
+    public Matrix<T> Multiply(Matrix<T> other)
     {
         if (Columns != other.Rows)
           throw new InvalidOperationException("Matrices cannot be multiplied");
 
         T[,] result = new T[Rows, other.Columns];
 
-        
+        for (int i = 0; i < Rows; i++) {
+            for (int j = 0; j < other.Columns; j++) {
+                dynamic sum = 0;
+                for (int k = 0; k < Columns; k++) {
+                    sum += (dynamic)_data[i, k] * other[k, j];
+                }
+                result[i, j] = sum;
+            }
+        }
+        return new Matrix<T>(result);
     }
 }

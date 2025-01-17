@@ -25,7 +25,8 @@ public class Program {
         Console.WriteLine("\nMatrix 2:");
         matrix2.Display();
         Console.WriteLine("\nMatrix Multiplication");
-        matrix1.Multiply(matrix2);
+        var product = matrix1.Multiply(matrix2);
+        product.Display();
 
     }
 }
