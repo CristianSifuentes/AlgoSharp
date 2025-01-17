@@ -30,6 +30,8 @@ public class Program {
         Console.WriteLine("\nTranspose of Matrix 1:");
         var transpose = matrix1.Transpose();
         transpose.Display();
+        Console.WriteLine("\nDeterminant of Matrix 1:");
+        Console.WriteLine(matrix1.Determinant());
 
     }
 }
