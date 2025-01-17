@@ -45,4 +45,9 @@ public class Matrix<T>: IMatrixOperations<T> where T : struct{
         }
         return new Matrix<T>(result);
     }
+
+    internal object Transpose()
+    {
+        throw new NotImplementedException();
+    }
 }

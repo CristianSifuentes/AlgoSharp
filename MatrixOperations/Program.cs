@@ -27,6 +27,8 @@ public class Program {
         Console.WriteLine("\nMatrix Multiplication");
         var product = matrix1.Multiply(matrix2);
         product.Display();
+        Console.WriteLine("\nTranspose of Matrix 1:");
+        var transpose = matrix1.Transpose();
 
     }
 }
