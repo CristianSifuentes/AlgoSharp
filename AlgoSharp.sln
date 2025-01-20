@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixOperations", "MatrixO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticlePhysicsSimulation", "ParticlePhysicsSimulation\ParticlePhysicsSimulation.csproj", "{C27E167C-FC62-4692-999C-C2D80F6B8407}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoleculeAnalysis", "MoleculeAnalysis\MoleculeAnalysis.csproj", "{D163233F-81CC-46AE-8589-61054DBD54F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C27E167C-FC62-4692-999C-C2D80F6B8407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27E167C-FC62-4692-999C-C2D80F6B8407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27E167C-FC62-4692-999C-C2D80F6B8407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D163233F-81CC-46AE-8589-61054DBD54F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D163233F-81CC-46AE-8589-61054DBD54F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D163233F-81CC-46AE-8589-61054DBD54F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D163233F-81CC-46AE-8589-61054DBD54F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
