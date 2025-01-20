@@ -29,4 +29,14 @@ public class Matrix : MathematicalObject, IMatrixOperations
     {
         throw new NotImplementedException();
     }
+
+     // Display the matrix
+    public override void Display() {
+        throw new NotImplementedException();
+    }
+
+    internal void Populate(double[,] doubles)
+    {
+        throw new NotImplementedException();
+    }
 }
