@@ -1,13 +1,19 @@
 // Base class for a Matrix
+using System.ComponentModel;
+
 public class Matrix : MathematicalObject, IMatrixOperations
 {
-    private int v1;
-    private int v2;
+    private readonly double [,] _data;
 
-    public Matrix(int v1, int v2)
+    public int Rows { get; private set; }
+    public int Columns { get; private set; }
+
+    // Constructor
+    public Matrix(int rows, int columns)
     {
-        this.v1 = v1;
-        this.v2 = v2;
+        Rows = rows;
+        Columns = columns;
+        _data = new double[rows, columns];
     }
 
     public Matrix Add(Matrix other)
@@ -32,11 +38,33 @@ public class Matrix : MathematicalObject, IMatrixOperations
 
      // Display the matrix
     public override void Display() {
-        throw new NotImplementedException();
+        for(int i = 0; i < Rows; i++){
+            for(int j = 0; j < Columns; j++){
+                Console.WriteLine($"{_data[i, j],8:F2}");
+            }
+            Console.WriteLine();
+        }
     }
 
-    internal void Populate(double[,] doubles)
+    // Method OverLoading: Populate matrix from 2D array
+    public void Populate(double[,] data)
     {
-        throw new NotImplementedException();
+        if(data.GetLength(0) != Rows || data.GetLength(1) != Columns)
+           throw new ArgumentException("Dimension mismatch");
+
+        for(int i = 0; i < Rows; i++){
+            for(int j= 0; j < Columns; j++){
+                _data[i, j] = data[i,j];
+            }
+        }
+    }
+
+    //Method Overloading: Populate with a constant value
+    public void Populate(double value){
+        for(int i = 0; i < Rows; i++){
+            for(int j = 0; j< Columns; j++){
+                _data[i, j] = value;
+            }
+        }
     }
 }
