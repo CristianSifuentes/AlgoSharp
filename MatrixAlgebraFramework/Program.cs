@@ -1,5 +1,8 @@
-﻿ class Program {
+﻿using System.Numerics;
+
+class Program {
         static void Main() { 
+
             // Create and populate matrices
             var matrixA =  new Matrix(2,2);
             matrixA.Populate(new double[, ] {{1, 2},{3, 4}});
@@ -9,6 +12,18 @@
             
             Console.WriteLine("Matrix A:");
             matrixA.Display();
+
+            Console.WriteLine("\nMatrix B:");
+            matrixB.Display();
+
+            // Perform operations
+            Console.WriteLine("\nMatrix A + Matrix B:");
+            var addition = matrixA.Add(matrixB);
+            addition.Display();
+
+            Console.WriteLine("\nDeterminant of Matrix A:");
+            Console.WriteLine(matrixA.Determinant());
+
 
         }
 
