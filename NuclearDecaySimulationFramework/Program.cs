@@ -44,6 +44,36 @@
             Console.WriteLine("\nSimulating Decay...");
             simulator.SimulateDecay(5);
             
+
+            // Use stack for tracking decay history
+            var decayHistory = new Stack<Particle>();
+            decayHistory.Push(new Particle { Name = "Uranium-238", Energy = 4.2 });
+            decayHistory.Push(new Particle { Name = "Thorium-234", Energy = 3.8 });
+            
+            Console.WriteLine("\nDecay History (Using Stack):");
+            while(decayHistory.Count > 0){
+                var decayedParticle = decayHistory.Pop();
+                Console.WriteLine($"{decayedParticle.Name}: {decayedParticle.Energy} MeV");
+            }
+
+            // Use dictionary for particle statistics
+            var particleStatistics = new Dictionary<string, int> {
+                {
+                    "Uranium-238", 1000
+                },
+                {
+                    "Thorium-234", 800
+                },
+                {
+                    "Radium-226", 600
+                }
+            };
+
+            Console.WriteLine("\nParticle Statistics (Using Dictionary):");
+            foreach(var kvp in particleStatistics){
+                Console.WriteLine($"{kvp.Key}: {kvp.Value} particles remaining");
+            }
+
         }
 }
 
