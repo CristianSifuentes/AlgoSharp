@@ -7,12 +7,6 @@ public class Matrix : MathematicalObject, IMatrixOperations
     public int Rows { get; private set; }
     public int Columns { get; private set; }
 
-    // Indexer for accessing matrix elements 
-    public double this[int row, int column]{
-        get => _data[row, column];
-        set => _data[row, column] = value;
-    }
-
     // Constructor
     public Matrix(int rows, int columns){
         Rows = rows;
@@ -20,8 +14,37 @@ public class Matrix : MathematicalObject, IMatrixOperations
         _data = new double[rows, columns];
     }
 
-    public Matrix Add(Matrix other)
-    {
+    // Indexer for accessing matrix elements 
+    public double this[int row, int column]{
+        get => _data[row, column];
+        set => _data[row, column] = value;
+    }
+
+    // Subtract  matrices 
+    public Matrix Subtract(Matrix other){
+       ValidateDimensionMatch(other);
+       var result = new Matrix(Rows, Columns);
+       for(int i = 0; i < Rows; i++){
+        for(int j = 0; j < Columns; j++){
+            result[i, j] = this[i, j] - other[i, j];
+        }
+       }
+       return result; 
+    }
+
+    // Static method for creating an identity matrix
+    public static Matrix Identity(int size){
+        var matrix = new Matrix(size, size);
+        for(int i = 0; i < size; i++){
+            matrix[i, i] = 1.0;
+        }
+        return matrix;
+    }
+
+
+
+
+    public Matrix Add(Matrix other){
         ValidateDimensionMatch(other);
         var result = new Matrix(Rows, Columns);
         for (int i = 0; i < Rows; i++) {
@@ -72,14 +95,20 @@ public class Matrix : MathematicalObject, IMatrixOperations
         return minor;
     }
 
-    public Matrix Multiply(Matrix other)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Matrix Substract(Matrix other)
-    {
-        throw new NotImplementedException();
+    // Multiply matrices
+    public Matrix Multiply(Matrix other){
+        if(Columns != other.Rows)
+           throw new InvalidOperationException("Invalid dimensions for multiplication.");
+        
+        var result = new Matrix(Rows, other.Columns);
+        for(int i = 0; i < Rows; i++){
+            for(int j = 0; j < other.Columns; j++){
+                for(int k = 0; k < Columns; k++){
+                    result [i, j] += this[i,k] * other[k,j];
+                }
+            }
+        }
+        return result; 
     }
 
      // Display the matrix
