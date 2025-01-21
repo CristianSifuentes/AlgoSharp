@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticlePhysicsSimulation",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoleculeAnalysis", "MoleculeAnalysis\MoleculeAnalysis.csproj", "{D163233F-81CC-46AE-8589-61054DBD54F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixAlgebraFramework", "MatrixAlgebraFramework\MatrixAlgebraFramework.csproj", "{F4C11822-0A49-42CC-9BB8-46425E04E867}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{D163233F-81CC-46AE-8589-61054DBD54F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D163233F-81CC-46AE-8589-61054DBD54F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D163233F-81CC-46AE-8589-61054DBD54F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C11822-0A49-42CC-9BB8-46425E04E867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C11822-0A49-42CC-9BB8-46425E04E867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C11822-0A49-42CC-9BB8-46425E04E867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C11822-0A49-42CC-9BB8-46425E04E867}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
