@@ -21,6 +21,29 @@
                     Console.WriteLine($"  - {particle.Name}: {particle.HalfLife.TotalSeconds} seconds");
                 }
             }
+
+            // Sort particles by energy using a custom comparer
+            particles.Sort(new EnergyComparer());
+            Console.WriteLine("\nParticles Sorted by Energy:");
+            particles.ForEach(p=> Console.WriteLine($"{p.Name}: {p.Energy} MeV"));
+            
+            // Initialize decay simulator
+            var simulator = new DecaySimulator();
+
+            // Subscribe to decay event
+            simulator.ParticleDecayed += (sender, args) => {
+                Console.WriteLine($"\nDecay Event: { args.DecayedParticle.Name } decayed at {args.DecayTime}");   
+            };
+
+            // Add particles to decay simulator 
+            foreach (var particle  in particles){
+                simulator.AddParticle(particle);
+            }
+
+            // Simulated decay process
+            Console.WriteLine("\nSimulating Decay...");
+            simulator.SimulateDecay(5);
+            
         }
 }
 
