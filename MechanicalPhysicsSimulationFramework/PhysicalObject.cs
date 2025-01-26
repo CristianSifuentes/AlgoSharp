@@ -3,26 +3,38 @@ public class PhysicalObject: IPhysicsEntity
 {
     private string Name { get; set; }
     public double Mass { get; set; } // kg
-    private Point2D<double> Position;
-    private Point2D<double> Velocity;
-    private Point2D<double> Acceleration;
-
-    public PhysicalObject(string name, double mass, Point2D<double> point2D1, Point2D<double> point2D2)
-    {
+    public Point2D<double> Position { get; private set; } // m
+    public Point2D<double> Velocity { get; private set; } // m
+    public Point2D<double> Acceleration { get; private set; } // m/s^2;
+    public event Action<string> ObjectUpdated; // Event for state updates 
+    public PhysicalObject(string name, double mass, Point2D<double> initialPosition, Point2D<double> initialVelocity){
         Name = name;
         Mass = mass;
-        Position = point2D1;
-        Velocity = point2D2;
+        Position = initialPosition;
+        Velocity = initialVelocity;
         Acceleration = new Point2D<double>(0,0);
     }
 
-    public void DisplayState()
-    {
-        throw new NotImplementedException();
+    public void DisplayState(){
+        Console.WriteLine($"{Name}: Position {Position}, Velocity {Velocity}, Acceleration {Acceleration}");
     }
 
-    public void Update(double timeStep)
-    {
-        throw new NotImplementedException();
+    // Apply a force to the object
+    public void ApplyForce(Point2D<double> force) {
+        Acceleration = new Point2D<double>(force.X / Mass, force.Y / Mass);
+    }
+
+    // Update the object´s state based on acceleration
+    public void Update(double timeStep){
+        Velocity = new Point2D<double>(
+            Velocity.X + Acceleration.X * timeStep,
+            Velocity.Y + Acceleration.Y * timeStep
+        );
+        Position = new Point2D<double>(
+           Position.X + Velocity.X * timeStep,
+           Position.Y + Velocity.Y * timeStep
+        );
+        
+        ObjectUpdated?.Invoke($"{Name} updated: Position {Position}, Velocity {Velocity}");
     }
 }

@@ -1,7 +1,7 @@
 // Generic class for a point in 2D space
-public class Point2D<T> where T: struct{
-    private T X;
-    private T Y;
+public class Point2D<T> where T: struct {
+    public T X { get; set; }
+    public T Y { get; set; }
 
     public Point2D(T x, T y){
         X = x;
@@ -10,5 +10,8 @@ public class Point2D<T> where T: struct{
 
     public override string ToString() => $"({X}, {Y})";
 }
+
+
+
 
     
