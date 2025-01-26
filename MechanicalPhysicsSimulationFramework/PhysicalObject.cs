@@ -1,16 +1,28 @@
 // Class representing a physical object in motion
-public class PhysicalObject
+public class PhysicalObject: IPhysicsEntity
 {
-    private string v1;
-    private int v2;
-    private Point2D<double> point2D1;
-    private Point2D<double> point2D2;
+    private string Name { get; set; }
+    public double Mass { get; set; } // kg
+    private Point2D<double> Position;
+    private Point2D<double> Velocity;
+    private Point2D<double> Acceleration;
 
-    public PhysicalObject(string v1, int v2, Point2D<double> point2D1, Point2D<double> point2D2)
+    public PhysicalObject(string name, double mass, Point2D<double> point2D1, Point2D<double> point2D2)
     {
-        this.v1 = v1;
-        this.v2 = v2;
-        this.point2D1 = point2D1;
-        this.point2D2 = point2D2;
+        Name = name;
+        Mass = mass;
+        Position = point2D1;
+        Velocity = point2D2;
+        Acceleration = new Point2D<double>(0,0);
+    }
+
+    public void DisplayState()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Update(double timeStep)
+    {
+        throw new NotImplementedException();
     }
 }
