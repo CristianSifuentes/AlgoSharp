@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MechanicalPhysicsSimulation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingSystem", "BankingSystem\BankingSystem.csproj", "{67024D4B-45DB-41F0-9108-684A0202C019}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeBankingSystem", "CleanCodeBankingSystem\CleanCodeBankingSystem.csproj", "{CBF97044-24DF-4B3D-8CC9-F4C235ED23AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{67024D4B-45DB-41F0-9108-684A0202C019}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67024D4B-45DB-41F0-9108-684A0202C019}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67024D4B-45DB-41F0-9108-684A0202C019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF97044-24DF-4B3D-8CC9-F4C235ED23AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF97044-24DF-4B3D-8CC9-F4C235ED23AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF97044-24DF-4B3D-8CC9-F4C235ED23AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF97044-24DF-4B3D-8CC9-F4C235ED23AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
