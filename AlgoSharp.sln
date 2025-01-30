@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuclearDecaySimulationFrame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MechanicalPhysicsSimulationFramework", "MechanicalPhysicsSimulationFramework\MechanicalPhysicsSimulationFramework.csproj", "{5EC40652-A7F9-48CA-A394-5C02CF370811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeBankingSystem", "CleanCodeBankingSystem\CleanCodeBankingSystem.csproj", "{053A7E92-D615-43AC-B1CA-B66AECECD440}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingSystem", "BankingSystem\BankingSystem.csproj", "{67024D4B-45DB-41F0-9108-684A0202C019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,9 +50,9 @@ Global
 		{5EC40652-A7F9-48CA-A394-5C02CF370811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC40652-A7F9-48CA-A394-5C02CF370811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC40652-A7F9-48CA-A394-5C02CF370811}.Release|Any CPU.Build.0 = Release|Any CPU
-		{053A7E92-D615-43AC-B1CA-B66AECECD440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{053A7E92-D615-43AC-B1CA-B66AECECD440}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{053A7E92-D615-43AC-B1CA-B66AECECD440}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{053A7E92-D615-43AC-B1CA-B66AECECD440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67024D4B-45DB-41F0-9108-684A0202C019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67024D4B-45DB-41F0-9108-684A0202C019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67024D4B-45DB-41F0-9108-684A0202C019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67024D4B-45DB-41F0-9108-684A0202C019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
