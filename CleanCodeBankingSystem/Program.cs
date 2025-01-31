@@ -4,8 +4,8 @@
     {
         // Set up dependencies
         var repository = new InMemoryBankAccountRepository();
-        var depositUseCase = new DepositMoneyUseCase();
-        var reportUseCase = new GenerateReportUseCase();
+        var depositUseCase = new DepositMoneyUseCase(repository);
+        var reportUseCase = new GenerateReportUseCase(repository);
     }
 
 }
