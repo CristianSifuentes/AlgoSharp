@@ -1,11 +1,12 @@
 // Deposit use case
 public class DepositMoneyUseCase: ITransactionUseCase
 {
-    private IBankAccountRepository  repository;
+    private readonly IBankAccountRepository  _repository;
 
     public DepositMoneyUseCase(IBankAccountRepository  repository)
     {
-        this.repository = repository;
+        _repository = repository;
+
     }
 
     public void Execute(string accountNumber, decimal amount)

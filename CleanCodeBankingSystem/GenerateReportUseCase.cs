@@ -1,10 +1,15 @@
 // Generate report use code
 public class GenerateReportUseCase
 {
-    private IBankAccountRepository  repository;
+    private readonly IBankAccountRepository _repository;
 
     public GenerateReportUseCase(IBankAccountRepository repository)
     {
-        this.repository = repository;
+        _repository = repository;
+    }
+
+    public IEnumerable<string> Execute(){
+        var accounts = _repository.GetAll();
+         return (IEnumerable<string>)accounts;
     }
 }
