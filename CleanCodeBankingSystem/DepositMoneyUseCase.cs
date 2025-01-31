@@ -1,9 +1,9 @@
 // Deposit use case
-public class DepositMoneyUseCase:ITransactionUseCase
+public class DepositMoneyUseCase: ITransactionUseCase
 {
-    private InMemoryBankAccountRepository repository;
+    private IBankAccountRepository  repository;
 
-    public DepositMoneyUseCase(InMemoryBankAccountRepository repository)
+    public DepositMoneyUseCase(IBankAccountRepository  repository)
     {
         this.repository = repository;
     }
