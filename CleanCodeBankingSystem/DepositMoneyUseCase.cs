@@ -11,6 +11,8 @@ public class DepositMoneyUseCase: ITransactionUseCase
 
     public void Execute(string accountNumber, decimal amount)
     {
-        throw new NotImplementedException();
+        var account = _repository.GetByAccountNumber(accountNumber);
+        if (account == null) throw new ArgumentException("Account not found.");
+        account.Deposit(amount);
     }
 }
