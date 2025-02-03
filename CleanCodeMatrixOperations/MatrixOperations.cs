@@ -16,12 +16,27 @@ public class MatrixOperations : IMatrixOperations
 
     public double Determinant(Matrix matrix)
     {
-        throw new NotImplementedException();
+        if (matrix.Rows != matrix.Columns)
+            throw new InvalidOperationException("Determinant can only be calculated for square matrices.");
+       return 0;
     }
 
     public Matrix Multiply(Matrix a, Matrix b)
     {
-        throw new NotImplementedException();
+        if (a.Columns != b.Rows)
+            throw new InvalidOperationException("Matrix multiplication dimensions mismatch.");
+
+        var result = new Matrix(a.Rows, b.Columns);
+
+        for (int i = 0; i < a.Rows; i++){
+            for (int j = 0; j < b.Columns; j++){
+                for (int k = 0; k < a.Columns; k++){
+                    result[i, j] += a[i, k] * b[k, j];
+                }
+            }
+        }
+
+        return result;
     }
 
     public Matrix Subtract(Matrix a, Matrix b)
